@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.5s ease;
+  color: #5487e1;
+  @include hover {
+    color: darken($color: #5487e1, $amount: 10);
+  }
+}
+a,
+button {
+  cursor: pointer;
+  border: none;
+}
+html {
+  overflow: hidden auto;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #e9ecf1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #5487e1;
+  }
+}
+body {
+  font-family: $font-family-primary;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  min-height: 100vh;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: #fff;
+  color: #131a27;
+}
+
+.container,
+[class*='__container'] {
+  max-width: $mediaWidthLaptop;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include media-tablet-horizontal {
+    max-width: 100%;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  footer {
+    margin-top: auto;
+  }
+}
