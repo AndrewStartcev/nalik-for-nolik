@@ -39,37 +39,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.querySelectorAll('.home-slider').forEach(root => {
-    // гарантируем нужные классы/структуру
-    root.classList.add('swiper');
-    const wrapper =
-      root.querySelector('.swiper-wrapper') ||
-      (() => {
-        const w = document.createElement('div');
-        w.className = 'swiper-wrapper';
-        while (root.firstChild) w.appendChild(root.firstChild);
-        root.appendChild(w);
-        return w;
-      })();
-    wrapper.querySelectorAll(':scope > *').forEach(el => el.classList.add('swiper-slide'));
+  new Swiper('.home-slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    loop: true,
+    grabCursor: true,
+    speed: 600,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+      640: { spaceBetween: 14 },
+      1024: { spaceBetween: 16 },
+    },
+  });
 
-    // инициализация
-    new Swiper(root, {
-      slidesPerView: 'auto',
-      spaceBetween: 20,
-      loop: true,
-      grabCursor: true,
-      speed: 600,
-      watchOverflow: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      breakpoints: {
-        640: { spaceBetween: 14 },
-        1024: { spaceBetween: 16 },
-      },
-    });
+  new Swiper('.reviews__slider', {
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    speed: 500,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+    },
+    navigation: {
+      prevEl: '.reviews__btn-prev',
+      nextEl: '.reviews__btn-next',
+    },
+    pagination: {
+      el: '.reviews__pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2.3, spaceBetween: 20 },
+      1200: { slidesPerView: 3, spaceBetween: 20 },
+    },
   });
 });
