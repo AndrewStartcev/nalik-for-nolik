@@ -15,6 +15,28 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleHeader();
   initFormSliders();
 
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetID = this.getAttribute('href');
+
+      if (targetID.length > 1) {
+        const targetEl = document.querySelector(targetID);
+
+        if (targetEl) {
+          e.preventDefault();
+
+          // Добавляем scroll-margin-top к целевому элементу
+          targetEl.style.scrollMarginTop = '100px';
+
+          targetEl.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }
+      }
+    });
+  });
+
   window.addEventListener('scroll', toggleHeader);
 
   function initFormSliders(root = document) {
