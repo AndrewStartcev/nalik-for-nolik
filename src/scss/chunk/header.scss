@@ -8,7 +8,6 @@
   transition: all 0.3s ease;
   &-show {
     background-color: #ffffff;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
   }
   &__container {
     display: flex;
@@ -29,12 +28,33 @@
     gap: 7px;
     transition: all 0.3s ease;
     background: transparent;
+    position: relative;
     span {
       width: 28px;
       height: 2px;
       background-color: #292d32;
       border-radius: 2px;
       transition: all 0.3s ease;
+    }
+    &.show {
+      gap: 0;
+      width: 38px;
+      span {
+        position: absolute;
+        left: 0;
+        &:first-child {
+          transform: rotate(45deg);
+          margin-top: 0px; // компенсирует сдвиг при повороте, чтобы центрировать крестик
+        }
+        &:nth-child(2) {
+          width: 0;
+        }
+
+        &:last-child {
+          transform: rotate(-45deg);
+          margin-top: 0px; // тянем обратно, чтобы сошлось в центре
+        }
+      }
     }
     @include hover {
       cursor: pointer;

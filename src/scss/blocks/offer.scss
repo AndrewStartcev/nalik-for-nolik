@@ -1,0 +1,57 @@
+.offer {
+  padding: 217px 0;
+  background: url('../img/offer_bg.jpg') center/cover no-repeat;
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    h2 {
+      margin: 0;
+      max-width: 790px;
+      align-self: stretch;
+      color: #131a27;
+      text-align: center;
+      font-size: 68px;
+      font-weight: 500;
+      line-height: 90%;
+      letter-spacing: -2.72px;
+    }
+  }
+}
+
+@include media-tablet-horizontal {
+  .offer {
+    padding: 166px 0;
+    &__body {
+      gap: 24px;
+      h2 {
+        max-width: 572px;
+        font-size: 48px;
+      }
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .offer {
+    padding: 190px 0;
+    &__body {
+      gap: 16px;
+      h2 {
+        max-width: 340px;
+        font-size: 32px;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

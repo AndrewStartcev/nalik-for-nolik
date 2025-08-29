@@ -43,3 +43,125 @@
     </div>
   </div>
 </footer>
+
+
+<div class="popup" id="mainPopup">
+  <div class="popup__content">
+    <div class="popup__body">
+      <button class="popup__close">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M18 6L6 18" stroke="#1E1F21" stroke-linecap="square" stroke-linejoin="round" />
+          <path d="M6 6L18 18" stroke="#1E1F21" stroke-linecap="square" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <div class="popup__title">Оставить заявку</div>
+      <div class="popup__text">Заполните короткую форму — и уже через 10 минут деньги будут у вас на карте</div>
+      <div class="popup__form">
+        <form action="" class="form">
+          <div
+            class="form__slider"
+            data-min="1000"
+            data-max="100000"
+            data-step="100"
+            data-start="32000"
+            data-suffix=" ₽"
+          >
+            <div class="form__slider-top">
+              <span>Сумма кредита</span>
+              <span class="_value">32 000 ₽</span>
+            </div>
+            <div class="_slider"></div>
+          </div>
+          <div class="form__row">
+            <div class="form__item">
+              <input type="text" name="user_name" placeholder="Ваше имя" />
+            </div>
+            <div class="form__item">
+              <input type="tel" name="user_tel" placeholder="Телефон" />
+            </div>
+          </div>
+          <div class="form__footer">
+            <div class="form__policy">
+              <svg
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.54 4.67001L13.04 2.61001C12.47 2.40001 11.54 2.40001 10.97 2.61001L5.47 4.67001C4.41 5.07001 3.55 6.31001 3.55 7.44001V15.54C3.55 16.35 4.08 17.42 4.73 17.9L10.23 22.01C11.2 22.74 12.79 22.74 13.76 22.01L19.26 17.9C19.91 17.41 20.44 16.35 20.44 15.54V7.44001C20.45 6.31001 19.59 5.07001 18.54 4.67001ZM12.75 13.37V16C12.75 16.41 12.41 16.75 12 16.75C11.59 16.75 11.25 16.41 11.25 16V13.37C10.24 13.05 9.5 12.11 9.5 11C9.5 9.62001 10.62 8.50001 12 8.50001C13.38 8.50001 14.5 9.62001 14.5 11C14.5 12.12 13.76 13.05 12.75 13.37Z"
+                  fill="#5DCD8B"
+                />
+              </svg>
+              <p>Все данные зашифрованы по стандарту DES</p>
+            </div>
+            <button class="btn form__btn" type="submit">Оставить заявку</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="formSuccess">
+  <div class="popup__content">
+    <div class="popup__body _center">
+      <button class="popup__close">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M18 6L6 18" stroke="#1E1F21" stroke-linecap="square" stroke-linejoin="round" />
+          <path d="M6 6L18 18" stroke="#1E1F21" stroke-linecap="square" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <div class="popup__icon">
+        <svg
+          width="60"
+          height="60"
+          viewBox="0 0 60 60"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="60" height="60" rx="30" fill="#44798E" />
+          <path
+            d="M42.2222 21.1111L25.9259 38.8889L17.7777 30"
+            stroke="white"
+            stroke-width="5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="popup__title">Спасибо за заявку</div>
+      <div class="popup__text">Мы свяжемся с вами в ближайшее время</div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-menu">
+  <div class="mobile-menu__container">
+    <div class="mobile-menu__list">
+      <ul>
+        <li><a href="#">Как получить</a></li>
+        <li><a href="#">Преимущества</a></li>
+        <li><a href="#">О сервисе</a></li>
+        <li><a href="#">Отзывы</a></li>
+        <li><a href="#">Вопросы</a></li>
+      </ul>
+    </div>
+    <div class="mobile-menu__footer">
+      <button class="btn"  data-popup="#mainPopup">Оставить заявку</button>
+    </div>
+  </div>
+</div>
