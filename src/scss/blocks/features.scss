@@ -1,0 +1,124 @@
+.features {
+  margin: 120px 0;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    gap: 64px;
+  }
+
+  &__image {
+    flex: 1 1 50%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 48px;
+    }
+  }
+
+  &__content {
+    flex: 1 1 50%;
+    h2 {
+      margin: 0;
+      font-size: 68px;
+      font-weight: 500;
+      line-height: 90%;
+      letter-spacing: -2.72px;
+      margin-bottom: 48px;
+    }
+    p {
+      font-size: 24px;
+      line-height: 120%;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      li {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 120%;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+
+        &::before {
+          flex: 0 0 auto;
+          content: '';
+          width: 24px;
+          height: 24px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%0A%3E%3Cpath d='M10 0.611328C4.49 0.611328 0 5.10133 0 10.6113C0 16.1213 4.49 20.6113 10 20.6113C15.51 20.6113 20 16.1213 20 10.6113C20 5.10133 15.51 0.611328 10 0.611328ZM14.78 8.31133L9.11 13.9813C8.97 14.1213 8.78 14.2013 8.58 14.2013C8.38 14.2013 8.19 14.1213 8.05 13.9813L5.22 11.1513C4.93 10.8613 4.93 10.3813 5.22 10.0913C5.51 9.80133 5.99 9.80133 6.28 10.0913L8.58 12.3913L13.72 7.25133C14.01 6.96133 14.49 6.96133 14.78 7.25133C15.07 7.54133 15.07 8.01133 14.78 8.31133Z' fill='%235DCD8B' /%3E%3C/svg%3E%0A")
+            center center / contain no-repeat;
+        }
+      }
+    }
+    .btn {
+      margin-top: 48px;
+    }
+  }
+}
+
+@include media-tablet-horizontal {
+  .features {
+    margin: 84px 0;
+    &__container {
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    &__content {
+      h2 {
+        font-size: 48px;
+        margin-bottom: 32px;
+      }
+      .btn {
+        margin-top: 32px;
+      }
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .features {
+    margin: 64px 0;
+    &__image {
+      img {
+        border-radius: 32px;
+      }
+    }
+    &__container {
+      gap: 32px;
+      p {
+        font-size: 18px;
+      }
+      ul {
+        li {
+          font-size: 16px;
+          &::before {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+
+    &__content {
+      h2 {
+        font-size: 34px;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

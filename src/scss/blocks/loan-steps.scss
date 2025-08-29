@@ -1,0 +1,139 @@
+.loan-steps {
+  margin: 32px 0 120px;
+  &__cards {
+    margin-top: 64px;
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  &__card {
+    flex: 1 1 0;
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 44px;
+    border: 1px solid rgba(19, 26, 39, 0.08);
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% - 24px);
+      height: calc(100% - 24px);
+      border-radius: 32px;
+      background: rgba(92, 200, 217, 0.12);
+    }
+    &:nth-child(3n + 1)::before {
+      background: rgba(92, 200, 217, 0.12);
+    }
+    &:nth-child(3n + 2)::before {
+      background: rgba(84, 135, 225, 0.12);
+    }
+    &:nth-child(3n + 3)::before {
+      background: rgba(93, 205, 139, 0.12);
+    }
+  }
+
+  &__top {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 24px 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  &__icon {
+    img {
+      width: 84px;
+      height: 84px;
+    }
+  }
+
+  &__step {
+    display: flex;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    background: #fff;
+    color: #131a27;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding: 84px 24px 24px;
+    h3 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 120%;
+    }
+    p {
+      margin: 0;
+      margin-top: 24px;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 120%;
+    }
+  }
+}
+
+@include media-tablet-horizontal {
+  .loan-steps {
+    margin: 32px 0 84px;
+    &__cards {
+      margin-top: 60px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__content {
+      padding: 64px 24px 24px;
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .loan-steps {
+    margin: 32px 0 64px;
+    &__cards {
+      margin-top: 32px;
+      gap: 12px;
+    }
+
+    &__icon {
+      img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    &__step {
+      font-size: 14px;
+    }
+
+    &__content {
+      padding: 48px 24px 24px;
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
